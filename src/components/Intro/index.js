@@ -1,12 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Intro from './Intro.jsx';
+import { startQuestionnaire } from '../../actions/navActions';
 
-export default class Intro extends React.Component {
-  render() {
-    return (
-      <div>
-      <div>PHQ-9 test</div>
-      <button>Begin</button>
-      </div>
-    )
+function mapDispatchToProps(dispatch) {
+  return {
+    startQuestionnaire: () => {
+      dispatch(startQuestionnaire());
+    }
   }
 }
+
+export default connect(null, mapDispatchToProps)(Intro);
