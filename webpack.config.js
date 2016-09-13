@@ -14,6 +14,10 @@ module.exports = {
         test: /\.jsx?/,
         include: path.resolve(__dirname, 'src'),
         loader: 'babel'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   },
