@@ -5,7 +5,7 @@ import Results from './Results.jsx';
 function mapStateToProps(state) {
   return {
     // Not totally necessary for small-scale apps like this, but we can use a library like "reselect" to memo-ize these calcuations
-    totalScore: state.questions.reduce((a, b) => a + b)
+    totalScore: state.questions.reduce((prev, curr) => prev + curr.score, 0)
   }
 }
 
