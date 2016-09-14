@@ -1,15 +1,36 @@
 const initialState = {
   hasStarted: false,
   currentQuestion: -1,
-  hasFinished: false
+  hasFinished: false,
+  errorMessage: ''
 }
 
 export default function nav (state = initialState, action) {
   switch (action.type) {
-    case 'QUESTIONNAIRE_STARTED':
+    case 'START_QUESTIONNAIRE':
       return Object.assign({}, state, {
         hasStarted: true,
         currentQuestion: 0
+      });
+
+    case 'NEXT_QUESTION':
+      return Object.assign({}, state, {
+        currentQuestion: state.currentQuestion + 1
+      });
+
+    case 'PREV_QUESTION':
+      return Object.assign({}, state, {
+        currentQuestion: state.currentQuestion - 1
+      });
+
+    case 'SUBMIT_ANSWERS':
+      return Object.assign({}, state, {
+        hasFinished: true
+      });
+
+    case 'ERROR_SUBMITTING':
+      return Object.assign({}, state, {
+        errorMessage: 'Please make sure you have answered every question!'
       });
 
     default:

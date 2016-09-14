@@ -4,7 +4,8 @@ import Questionnaire from './Questionnaire.jsx';
 
 function mapStateToProps(state) {
   return {
-    hasStarted: state.hasStarted
+    hasStarted: state.nav.hasStarted,
+    hasCompleted: state.nav.hasCompleted
   }
 }
 
