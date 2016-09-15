@@ -22,23 +22,43 @@ export function checkSubmit() {
 
     for (var i = 0; i < questions.length; i++) {
       if (questions[i].score < 0) {
-        dispatch(throwError());
+        dispatch(submitError());
         return;
       };
     }
 
-    dispatch(submit());
+    const totalScore = questions.reduce((prev, curr) => prev + curr.score, 0);
+
+    dispatch(submitSuccess());
+
+    if (totalScore >= 10) {
+      dispatch(moderateOrHigher());
+    } else {
+      dispatch(mild());
+    }
   }
 }
 
-function submit() {
+function submitSuccess() {
   return {
-    type: 'SUBMIT_ANSWERS'
+    type: 'SUBMIT_SUCCESS'
   }
 }
 
-function throwError() {
+function submitError() {
   return {
-    type: 'ERROR_SUBMITTING'
+    type: 'SUBMIT_ERROR'
+  }
+}
+
+function moderateOrHigher() {
+  return {
+    type: 'SUBMIT_AS_MODERATE_OR_HIGHER'
+  }
+}
+
+function mild() {
+  return {
+    type: 'SUBMIT_AS_MILD'
   }
 }

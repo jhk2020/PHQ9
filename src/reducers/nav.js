@@ -23,12 +23,12 @@ export default function nav (state = initialState, action) {
         currentQuestion: state.currentQuestion - 1
       });
 
-    case 'SUBMIT_ANSWERS':
+    case 'SUBMIT_SUCCESS':
       return Object.assign({}, state, {
         hasFinished: true
       });
 
-    case 'ERROR_SUBMITTING':
+    case 'SUBMIT_ERROR':
       return Object.assign({}, state, {
         errorMessage: 'Please make sure you have answered every question!'
       });

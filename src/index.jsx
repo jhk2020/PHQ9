@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
-import Questionnaire from './components/Questionnaire';
+import Questionnaire from './modules/Questionnaire';
 
 const createStoreWithThunk = applyMiddleware(thunk)(createStore);
 const store = createStoreWithThunk(reducers);
