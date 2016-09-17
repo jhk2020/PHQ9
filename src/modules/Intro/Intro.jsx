@@ -1,12 +1,20 @@
 import React from 'react';
+import Button from 'components/Button';
 
-export default class Intro extends React.Component {
-  render() {
-    return (
-      <div>
-        <div>PHQ-9 test</div>
-        <button onClick={this.props.startQuestionnaire}>Begin</button>
-      </div>
-    )
-  }
-}
+import './Intro.scss';
+
+const Intro = (props) => (
+  <div>
+    <div className='header'>
+      <h1 className='header-text'>PHQ-9 test</h1>
+    </div>
+    <div className='content'>
+      <p>
+        This easy to use patient questionnaire is a self-administered version of the PRIME-MD diagnostic instrument for common mental disorders. The PHQ-9 is the depression module, which scores each of the nine DSM-IV criteria as "0" (not at all) to "3" (nearly every day). It has been validated for use in primary care.
+      </p>
+      <Button onClick={props.startQuestionnaire} text='Begin'/>
+    </div>
+  </div>
+)
+
+export default Intro;

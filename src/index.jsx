@@ -3,8 +3,9 @@ import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import reducers from './reducers';
-import Questionnaire from './modules/Questionnaire';
+import reducers from 'reducers';
+import Questionnaire from 'modules/Questionnaire';
+import 'styles/general.scss';
 
 const createStoreWithThunk = applyMiddleware(thunk)(createStore);
 const store = createStoreWithThunk(reducers);

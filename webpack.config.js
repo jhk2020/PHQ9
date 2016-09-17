@@ -16,10 +16,19 @@ module.exports = {
         loader: 'babel'
       },
       {
+        test: /\.scss$/,
+        loader: "style!css!sass"
+      },
+      {
         test: /\.json$/,
         loader: 'json'
       }
     ]
   },
+
+  resolve: {
+    root: path.resolve('./src'),
+    extensions: ['', '.js', '.jsx']
+  }
 
 };

@@ -3,6 +3,8 @@ import Intro from '../Intro';
 import Question from '../Question';
 import Results from '../Results';
 
+import './Questionnaire.scss';
+
 const Questionnaire = (props) => {
   let component;
   if (!props.hasStarted) {
@@ -15,7 +17,7 @@ const Questionnaire = (props) => {
     }
   }
 
-  return <div>{component}</div>;
+  return <div id='container'>{component}</div>;
 
 }
 
