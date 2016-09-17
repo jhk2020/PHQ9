@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.scss';
 
 const Button = (props) => {
-  var styles;
+  let styles;
   if (props.disable === true) {
     styles = {
       backgroundColor: '#D0DBDB'

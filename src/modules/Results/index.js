@@ -5,7 +5,7 @@ import { selectTherapist } from '../../actions/therapistActions';
 
 function mapStateToProps(state) {
   let selectedBHP;
-  for (var i = 0; i < state.therapists.length; i++) {
+  for (let i = 0; i < state.therapists.length; i++) {
     if (state.therapists[i].id === state.results.selectedBHP) {
       selectedBHP = state.therapists[i];
     }

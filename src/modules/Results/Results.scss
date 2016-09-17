@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.results {
+  margin: auto;
+
+  @media screen and (max-width: $break-small) {
+    margin: 0;
+  }
+}
+
+.thank-you-message {
+  color: $button-color;
+  width: 80px;
+  margin: auto;
+}

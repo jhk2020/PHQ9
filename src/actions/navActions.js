@@ -20,12 +20,12 @@ export function checkSubmit() {
   return (dispatch, getState) => {
     const { questions } = getState();
 
-    for (var i = 0; i < questions.length; i++) {
-      if (questions[i].score < 0) {
-        dispatch(submitError());
-        return;
-      };
-    }
+    // for (let i = 0; i < questions.length; i++) {
+    //   if (questions[i].score < 0) {
+    //     dispatch(submitError());
+    //     return;
+    //   };
+    // }
 
     const totalScore = questions.reduce((prev, curr) => prev + curr.score, 0);
 

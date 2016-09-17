@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.therapist {
+  height: 30px;
+  margin-bottom: 10px;
+  line-height: 30px;
+
+  div {
+    margin-left: 10px;
+  }
+
+  &:hover, &:active, &:focus {
+    background-color: $primary;
+    color: $white;
+    -webkit-transition: all .1s ease-in-out;
+  }
+}

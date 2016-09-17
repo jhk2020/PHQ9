@@ -22,7 +22,6 @@ ul {
 .content {
   margin: 5%;
   margin-top: 20px;
-  text-align: justify;
   font-size: 15px;
 }
 
@@ -30,4 +29,9 @@ ul {
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+.selected {
+  background-color: $primary;
+  color: $white;
 }
