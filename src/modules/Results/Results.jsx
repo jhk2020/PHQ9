@@ -8,8 +8,11 @@ const Results = (props) => {
   if (props.BHPNeeded === false) {
 
     results = (
-      <div className='content'>
-        Thank you for taking the questionnaire.
+      <div className='no-bhp'>
+        <span>
+          Thank you for taking the questionnaire.
+
+        </span>
       </div>
     );
 
@@ -25,7 +28,7 @@ const Results = (props) => {
 
     results = (
       <div className='content'>
-        <h3>Please select a behavioral healthcare provider from the list below:</h3>
+        <h4>Based on your score, we suggest speaking with a therapist. Please select from options below:</h4>
         <div>{therapists}</div>
       </div>
     );
@@ -33,12 +36,16 @@ const Results = (props) => {
   return (
     <div className='results'>
       {results}
+      <div className='score-message'>
+        <span>Your score is {props.totalScore} / 27.</span>
+      </div>
       {
         props.selectedBHP !== undefined ?
         <div className='thank-you-message'>Thank you!</div>
         : null
       }
     </div>
+
   );
 };
 

@@ -20,21 +20,21 @@ export function checkSubmit() {
   return (dispatch, getState) => {
     const { questions } = getState();
 
-    // for (let i = 0; i < questions.length; i++) {
-    //   if (questions[i].score < 0) {
-    //     dispatch(submitError());
-    //     return;
-    //   };
-    // }
+    for (let i = 0; i < questions.length; i++) {
+      if (questions[i].score < 0) {
+        dispatch(submitError());
+        return;
+      };
+    }
 
     const totalScore = questions.reduce((prev, curr) => prev + curr.score, 0);
 
     dispatch(submitSuccess());
 
     if (totalScore >= 10) {
-      dispatch(moderateOrHigher());
+      dispatch(moderateOrHigher(totalScore));
     } else {
-      dispatch(mild());
+      dispatch(mild(totalScore));
     }
   }
 }
@@ -51,14 +51,16 @@ function submitError() {
   }
 }
 
-function moderateOrHigher() {
+function moderateOrHigher(totalScore) {
   return {
-    type: 'SUBMIT_AS_MODERATE_OR_HIGHER'
+    type: 'SUBMIT_AS_MODERATE_OR_HIGHER',
+    totalScore
   }
 }
 
-function mild() {
+function mild(totalScore) {
   return {
-    type: 'SUBMIT_AS_MILD'
+    type: 'SUBMIT_AS_MILD',
+    totalScore
   }
 }

@@ -13,6 +13,7 @@ function mapStateToProps(state) {
 
   return {
     BHPNeeded: state.results.BHPNeeded,
+    totalScore: state.results.totalScore,
     therapists: state.therapists,
     selectedBHP
   }
