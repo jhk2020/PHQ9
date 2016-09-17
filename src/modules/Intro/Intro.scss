@@ -1,18 +1,11 @@
-.header {
-  background-color: #1DC6C7;
-  height: 50px;
-  color: #FEFEFE;
-  text-align: center;
-  border-radius: 5px 5px 0 0;
-}
+@import '../../styles/variables.scss';
 
 .header-text {
-  font-size: 35px;
+  font-size: 20px;
   margin: 0;
-  padding-top: 5px;
+  padding-top: 7px;
 }
 
-.content {
-  margin: 5%;
-  text-align: justify;
+.intro-text {
+  line-height: 1.7;
 }

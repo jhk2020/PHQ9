@@ -1,0 +1,55 @@
+@import '../../styles/variables.scss';
+
+.question {
+  width: 100%;
+}
+
+.question-number {
+  color: $light-grey;
+  font-size: 15px;
+  margin-left: 5%;
+  margin-bottom: 0;
+}
+
+.main-question {
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.line {
+  border-width: 1px 1px 0;
+  color: $light-grey;
+}
+
+.options {
+  .selected {
+    background-color: $primary;
+    color: $white;
+  }
+
+  li {
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    color: $grey;
+    border-radius: 2px;
+
+    span {
+      margin-left: 10px;
+    }
+
+    &:hover, &:active, &:focus {
+      background-color: $primary;
+      color: $white;
+      -webkit-transition: all .1s ease-in-out;
+    }
+  }
+}
+
+.error-message {
+  margin: 5%;
+  margin-top: 25px;
+  color:$red;
+  font-size: 11px;
+}

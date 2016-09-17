@@ -9,6 +9,7 @@ function mapStateToProps(state) {
 
   return {
     currentQuestion: questions[nav.currentQuestion],
+    score: questions[nav.currentQuestion].score,
     currentIndex: nav.currentQuestion,
     errorMessage: nav.errorMessage
   }

@@ -2,9 +2,15 @@
 
 #container {
   background-color: $white;
-  margin: 30% 5%;
+  margin: 10% 5%;
   font-family: $font-stack;
   border-radius: 5px;
   display: flex;
+  position: relative;
   padding-bottom: 10px;
+  min-height: 70%;
+
+  @media screen and (max-width: $break-small) {
+    height: 80%;
+  }
 }
