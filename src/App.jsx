@@ -10,6 +10,9 @@ import 'styles/general.scss';
 const createStoreWithThunk = applyMiddleware(thunk)(createStore);
 const store = createStoreWithThunk(reducers);
 
+// For testing puposes:
+module.exports = { store };
+
 const node = (
   <Provider store={store}>
     <Questionnaire />
