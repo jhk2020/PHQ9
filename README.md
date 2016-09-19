@@ -10,8 +10,10 @@ In terms of its structure, the application is organized into `modules`, which ar
 
 ### Setup
 ```
+npm install
 npm start
 ```
+Then point your browser to `http://localhost:8080/`.
 ### Testing
 Tests were only written for the `Question` module, focusing on its action creator, reducer, and component UI.
 ```
